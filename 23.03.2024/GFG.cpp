@@ -1,0 +1,18 @@
+class Solution {
+  public:
+    vector<int> Series(int n) {
+    vector<int> ans(n+1);
+    ans[0]=0;
+    ans[1]=1;
+    
+    int mod = 1e9+7;
+    
+    for(int i = 2;i<=n;i++)
+    {
+        int val = ans[i-1]+ans[i-2];
+        val = val%mod;
+         ans[i]= val;
+    }
+return ans;
+    }
+};
